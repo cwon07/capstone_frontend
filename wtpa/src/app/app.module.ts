@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { RsvpsComponent } from './rsvps/rsvps.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RsvpComponent,
-    RsvpsComponent
+    RsvpsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
