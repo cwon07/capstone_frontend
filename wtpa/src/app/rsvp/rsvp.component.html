@@ -1,0 +1,4 @@
+<p
+    [ngStyle]="{'background-color': getColor()}"
+    [ngClass]="{confirmed: rsvpStatus === 'confirmed'}">
+        {{ 'Guest'}} has {{ getRsvpStatus() }} to the event.</p>
