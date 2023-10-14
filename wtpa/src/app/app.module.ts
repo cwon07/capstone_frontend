@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { EventsComponent } from './events/events.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { EventEditComponent } from './events/event-edit/event-edit.component';
 import { EventListComponent } from './events/event-list/event-list.component';
@@ -16,6 +17,7 @@ import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    EventsComponent,
     EventDetailComponent,
     EventEditComponent,
     EventListComponent,

@@ -1,13 +1,8 @@
-<label>RSVP List</label>
-<input 
-type="text" 
-class="form-control" 
-[(ngModel)]="rsvpName">
-<button class="btn btn-primary" 
-[disabled]="!allowNewRsvp"
-(click)="onCreateRsvp()">
-    Add New RSVP
-</button>
-<p *ngIf="rsvpCreated; else noRsvp">{{ rsvpName }} has confirmed their attendance.</p>
-<ng-template #noRsvp><p>{{ rsvpName }} cannot make it to the event.</p></ng-template>
-<app-rsvp *ngFor="let rsvp of rsvps"></app-rsvp>
+<div class="row">
+    <div class="col-md-5">
+        <app-event-list></app-event-list>
+    </div>
+    <div class="col-md-7">
+        <app-event-detail></app-event-detail>
+    </div>
+</div>
