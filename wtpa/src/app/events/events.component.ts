@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Event } from './event.model';
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
 })
 
 export class EventsComponent {
-
+  selectedEvent?: Event;
 }

@@ -1,11 +1,11 @@
-<app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <app-events></app-events>
-      <app-rsvp-list></app-rsvp-list>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-events *ngIf="loadedFeature === 'event'"></app-events>
+        <app-rsvp-list *ngIf="loadedFeature !== 'event'"></app-rsvp-list>
+    </div>
   </div>
-</div>
 </div>
 
  

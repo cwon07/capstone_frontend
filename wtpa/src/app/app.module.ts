@@ -8,7 +8,7 @@ import { EventsComponent } from './events/events.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { EventEditComponent } from './events/event-edit/event-edit.component';
 import { EventListComponent } from './events/event-list/event-list.component';
-import { EventGuestComponent } from './events/event-list/event-guest/event-guest.component';
+import { EventItemComponent } from './events/event-list/event-item/event-item.component';
 import { EventStartComponent } from './events/event-start/event-start.component';
 import { RsvpListComponent } from './rsvp-list/rsvp-list.component';
 import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
@@ -21,7 +21,7 @@ import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
     EventDetailComponent,
     EventEditComponent,
     EventListComponent,
-    EventGuestComponent,
+    EventItemComponent,
     EventStartComponent,
     RsvpListComponent,
     RsvpEditComponent,
