@@ -12,4 +12,8 @@ export class RsvpListComponent {
     new Guest('Chris', 1, 2),
     new Guest('Jemma', 2, 1)
   ];
+
+  onGuestAdded(guests: Guest) {
+    this.guests.push(guests);
+  }
 }

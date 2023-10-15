@@ -12,6 +12,7 @@ import { EventItemComponent } from './events/event-list/event-item/event-item.co
 import { EventStartComponent } from './events/event-start/event-start.component';
 import { RsvpListComponent } from './rsvp-list/rsvp-list.component';
 import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
     EventStartComponent,
     RsvpListComponent,
     RsvpEditComponent,
+    DropdownDirective
 
   ],
   imports: [

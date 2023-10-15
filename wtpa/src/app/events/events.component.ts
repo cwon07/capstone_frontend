@@ -9,5 +9,5 @@ import { Event } from './event.model';
 })
 
 export class EventsComponent {
-  selectedEvent?: Event;
+  selectedEvent!: Event;
 }

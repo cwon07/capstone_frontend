@@ -3,13 +3,13 @@
     class="list-group-item clearfix" 
     (click)="onSelected()">
     <div class="pull-left">
-        <h4 class="list-group-item-heading">Event Title</h4>
-        <p class="list-group-item-text">Event Description</p>
+        <h4 class="list-group-item-heading">{{ event.title }}</h4>
+        <p class="list-group-item-text">{{ event.desc }}</p>
     </div>
     <span class="pull-right">
         <img 
-            src="" 
-            alt=""
+            [src]="event.imageUrl" 
+            alt="{{ event.title }}"
             class="img-responsive" 
             style="max-height:50px">
     </span>

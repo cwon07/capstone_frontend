@@ -9,7 +9,7 @@ import { Event } from '../../event.model'
 })
 
 export class EventItemComponent {
-  @Input() event?: Event;
+  @Input() event!: Event;
   @Output() eventSelected = new EventEmitter<void>();
 
   onSelected() {

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <img 
-            src="" 
+            [src]="event.imageUrl" 
             alt="event title" 
             class="img-responsive"
             style="max-height: 300px">
@@ -9,12 +9,14 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Event Title</h1>
+        <h1>{{ event.title }}</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group">
+        <div 
+            class="btn-group" 
+            appDropdown>
             <button 
                 type="button" 
                 class="btn btn-primary dropdown-toggle">
@@ -30,7 +32,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Event Description
+        {{ event.desc }}
     </div>
 </div>
 <div class="row">

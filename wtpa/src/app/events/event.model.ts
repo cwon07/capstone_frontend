@@ -18,5 +18,4 @@ export class Event {
         this.rsvpDate = rsvpDate;
         this.contactInfo = contactInfo;
     }
-
 }
