@@ -1,4 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { Guest } from '../../shared/guest.model';
 import { RsvpListService } from '../rsvp-list.service';
@@ -8,18 +10,52 @@ import { RsvpListService } from '../rsvp-list.service';
   templateUrl: './rsvp-edit.component.html',
   styleUrls: ['./rsvp-edit.component.css']
 })
-export class RsvpEditComponent {
-  @ViewChild('nameInput', { static: false }) nameInputRef!: ElementRef;
-  @ViewChild('adultInput', { static: false}) adultInputRef!: ElementRef;
-  @ViewChild('childInput', { static: false}) childInputRef!: ElementRef;
+export class RsvpEditComponent implements OnDestroy{
+  @ViewChild('f', { static: false }) 
+  rlForm!: NgForm;
+  subscription!: Subscription;
+  editMode = false;
+  editedGuestIndex!: number;
+  editedGuest!: Guest;
 
-  constructor(private rlService: RsvpListService) {}
+  constructor(private rlService: RsvpListService) {
+    this.subscription = this.rlService.startedEditing.subscribe(
+      (index: number) => {
+        this.editedGuestIndex = index;
+        this.editMode = true;
+        this.editedGuest = this.rlService.getGuest(index);
+        this.rlForm.setValue({
+          name: this.editedGuest.name,
+          adult: this.editedGuest.adult,
+          children: this.editedGuest.children
+        })
+      }
+    )
+  }
 
-  onAddGuest() {
-  const ingName = this.nameInputRef.nativeElement.value;
-  const ingAdult = this.adultInputRef.nativeElement.value;
-  const ingChild = this.childInputRef.nativeElement.value;
-  const newGuest = new Guest(ingName, ingAdult, ingChild);
-  this.rlService.addGuest(newGuest);
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const newGuest = new Guest(value.name, value.adult, value.children);
+    if (this.editMode) {
+      this.rlService.updateGuest(this.editedGuestIndex, newGuest);
+    } else {
+      this.rlService.addGuest(newGuest);
+    }
+    this.editMode = false;
+    form.reset();
+  }
+
+  onClear() {
+    this.rlForm.reset();
+    this.editMode = false;
+  }
+
+  onDelete() {
+    this.rlService.deleteGuest(this.editedGuestIndex);
+    this.onClear();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

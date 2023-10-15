@@ -16,7 +16,7 @@ const appRoutes: Routes = [
         { path: ':id', component: EventDetailComponent },
         { path: ':id/edit', component: EventEditComponent },
     ]},
-    { path: 'rsvp-list', component: RsvpListComponent },
+    { path: 'rsvp', component: RsvpListComponent },
 ];
 
 @NgModule({
