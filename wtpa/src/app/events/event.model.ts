@@ -1,3 +1,5 @@
+import { Guest } from '../shared/guest.model'
+
 export class Event {
     public title: string;
     public desc: string;
@@ -7,8 +9,9 @@ export class Event {
     public location: string;
     public rsvpDate: string;
     public contactInfo: string;
+    public guests: Guest[];
 
-    constructor(title: string, desc: string, imageUrl: string, date: string, time: string, location: string, rsvpDate: string, contactInfo: string) {
+    constructor(title: string, desc: string, imageUrl: string, date: string, time: string, location: string, rsvpDate: string, contactInfo: string, guests: Guest[]) {
         this.title = title;
         this.desc = desc;
         this.imageUrl = imageUrl;
@@ -17,5 +20,6 @@ export class Event {
         this.location = location;
         this.rsvpDate = rsvpDate;
         this.contactInfo = contactInfo;
+        this.guests = guests;
     }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Guest } from '../shared/guest.model';
+import { RsvpListService } from './rsvp-list.service';
 
 @Component({
   selector: 'app-rsvp-list',
@@ -8,12 +9,12 @@ import { Guest } from '../shared/guest.model';
   styleUrls: ['./rsvp-list.component.css']
 })
 export class RsvpListComponent {
-  guests: Guest[] = [
-    new Guest('Chris', 1, 2),
-    new Guest('Jemma', 2, 1)
-  ];
+  guests: Guest[];
 
-  onGuestAdded(guests: Guest) {
-    this.guests.push(guests);
+  constructor(private rlService: RsvpListService) { 
+    this.guests = this.rlService.getGuests();
+    this.rlService.guestsChanged.subscribe((guests: Guest[]) => {
+      this.guests = guests;
+    })
   }
 }

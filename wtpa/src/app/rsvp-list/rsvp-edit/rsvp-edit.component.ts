@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
 
 import { Guest } from '../../shared/guest.model';
+import { RsvpListService } from '../rsvp-list.service';
 
 @Component({
   selector: 'app-rsvp-edit',
@@ -13,11 +14,13 @@ export class RsvpEditComponent {
   @ViewChild('childInput', { static: false}) childInputRef!: ElementRef;
   @Output() guestAdded = new EventEmitter<Guest>();
 
+  constructor(private rlService: RsvpListService) {}
+
   onAddGuest() {
   const ingName = this.nameInputRef.nativeElement.value;
   const ingAdult = this.adultInputRef.nativeElement.value;
   const ingChild = this.childInputRef.nativeElement.value;
   const newGuest = new Guest(ingName, ingAdult, ingChild);
-  this.guestAdded.emit(newGuest);
+  this.rlService.addGuest(newGuest);
   }
 }

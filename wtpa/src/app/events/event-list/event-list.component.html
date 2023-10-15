@@ -8,8 +8,7 @@
     <div class="col-xs-12">
         <app-event-item 
             *ngFor="let eventEl of events" 
-            [event]="eventEl" 
-            (eventSelected)="onEventSelected(eventEl)">
+            [event]="eventEl">
         </app-event-item>
     </div>
 </div>

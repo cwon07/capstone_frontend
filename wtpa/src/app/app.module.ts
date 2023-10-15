@@ -13,6 +13,7 @@ import { EventStartComponent } from './events/event-start/event-start.component'
 import { RsvpListComponent } from './rsvp-list/rsvp-list.component';
 import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { RsvpListService } from './rsvp-list/rsvp-list.service';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,12 @@ import { DropdownDirective } from './shared/dropdown.directive';
     RsvpListComponent,
     RsvpEditComponent,
     DropdownDirective
-
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RsvpListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
