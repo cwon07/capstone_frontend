@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Event } from '../event.model';
 import { EventService } from '../event.service';
@@ -9,10 +10,15 @@ import { EventService } from '../event.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent {
-  @Output() eventSelected = new EventEmitter<Event>();
   events: Event[] = [];
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService,
+              private router: Router,
+              private route: ActivatedRoute) {
     this.events = this.eventService.getEvents();
+  }
+
+  onNewEvent() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 }

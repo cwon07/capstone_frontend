@@ -31,6 +31,10 @@ export class EventService {
             return this.events.slice();
         }
 
+        getEvent(index: number) {
+            return this.events[index];
+        }
+
         addGuestsToRsvpList(guests: Guest[]) {
             this.rlService.addGuests(guests);
         }

@@ -14,6 +14,7 @@ import { RsvpListComponent } from './rsvp-list/rsvp-list.component';
 import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RsvpListService } from './rsvp-list/rsvp-list.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RsvpListService } from './rsvp-list/rsvp-list.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [RsvpListService],
   bootstrap: [AppComponent]

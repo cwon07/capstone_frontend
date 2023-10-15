@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Event } from '../../event.model'
 
@@ -10,9 +10,5 @@ import { Event } from '../../event.model'
 
 export class EventItemComponent {
   @Input() event!: Event;
-  @Output() eventSelected = new EventEmitter<void>();
-
-  onSelected() {
-    this.eventSelected.emit();
-  }
+  @Input() index!: number;
 }
