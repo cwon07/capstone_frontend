@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +16,7 @@ import { RsvpEditComponent } from './rsvp-list/rsvp-edit/rsvp-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RsvpListService } from './rsvp-list/rsvp-list.service';
 import { AppRoutingModule } from './app-routing.module';
+import { EventService } from './events/event.service';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,11 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [RsvpListService],
+  providers: [RsvpListService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

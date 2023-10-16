@@ -1,1 +1,104 @@
-<p>event-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit" [disabled]="!eventForm.valid">Save</button>
+                    <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" class="form-control" formControlName="title">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="imageUrl">Image URL</label>
+                      <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl" #imageUrl>
+                     </div>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img [src]="imageUrl.value" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date" class="form-control" formControlName="date">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="text" id="time" class="form-control" formControlName="time">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" class="form-control" formControlName="location">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="rsvpDate">Please RSVP By</label>
+                        <input type="text" id="rsvpDate" class="form-control" formControlName="rsvpDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="desc">Description</label>
+                        <textarea type="text" id="desc" class="form-control" formControlName="desc" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="contactInfo">Contact Info</label>
+                        <input type="text" id="contactInfo" class="form-control" formControlName="contactInfo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="guests">
+                    <div class="row" *ngFor="let guestCtrl of eventControls; let i = index"
+                    [formGroupName]="i" style="margin-top: 10px">
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="col-xs-2">
+                    <input type="number" class="form-control" formControlName="adult">
+                    <input type="number" class="form-control" formControlName="children">
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-danger" type="button" (click)="onDeleteGuest(i)">X</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="button" (click)="onAddGuest()">Add Guest</button>
+                </div>
+            </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

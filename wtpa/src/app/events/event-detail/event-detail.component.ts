@@ -27,4 +27,9 @@ export class EventDetailComponent {
   onEditEvent() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
+
+  onDeleteEvent() {
+    this.eventService.deleteEvent(this.id);
+    this.router.navigate(['/events'])
+  }
 }
