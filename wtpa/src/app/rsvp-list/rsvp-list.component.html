@@ -5,7 +5,8 @@
         <ul class="list-group">
             <a 
                 style="cursor: pointer" 
-                *ngFor="let guest of guests"
+                *ngFor="let guest of guests; let i = index"
+                (click)="onEditItem(i)"
                 class="list-group-item">
                 Name: {{ guest.name }} # of Adults: {{ guest.adult }} # of Children: {{guest.children}}
             </a>

@@ -17,6 +17,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RsvpListService } from './rsvp-list/rsvp-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { EventService } from './events/event.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EventService } from './events/event.service';
     EventStartComponent,
     RsvpListComponent,
     RsvpEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

@@ -19,16 +19,17 @@ export class RsvpEditComponent implements OnDestroy{
   editedGuest!: Guest;
 
   constructor(private rlService: RsvpListService) {
-    this.subscription = this.rlService.startedEditing.subscribe(
-      (index: number) => {
-        this.editedGuestIndex = index;
-        this.editMode = true;
-        this.editedGuest = this.rlService.getGuest(index);
-        this.rlForm.setValue({
-          name: this.editedGuest.name,
-          adult: this.editedGuest.adult,
-          children: this.editedGuest.children
-        })
+    this.subscription = this.rlService.startedEditing
+      .subscribe(
+        (index: number) => {
+          this.editedGuestIndex = index;
+          this.editMode = true;
+          this.editedGuest = this.rlService.getGuest(index);
+          this.rlForm.setValue({
+            name: this.editedGuest.name,
+            adult: this.editedGuest.adult,
+            children: this.editedGuest.children
+          })
       }
     )
   }

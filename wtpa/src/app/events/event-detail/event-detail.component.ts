@@ -16,7 +16,10 @@ export class EventDetailComponent {
   constructor(private eventService: EventService,
               private route: ActivatedRoute,
               private router: Router) {
-                this.route.params.subscribe((params: Params) => {this.id = +params['id']; this.event = this.eventService.getEvent(this.id);}
+                this.route.params.subscribe(
+                  (params: Params) => {
+                    this.id = +params['id']; 
+                    this.event = this.eventService.getEvent(this.id);}
                 )
   }
   
