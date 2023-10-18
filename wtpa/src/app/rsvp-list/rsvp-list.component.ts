@@ -15,11 +15,12 @@ export class RsvpListComponent implements OnDestroy {
 
   constructor(private rlService: RsvpListService) { 
     this.guests = this.rlService.getGuests();
-    this.subscription = this.rlService.guestsChanged.subscribe(
+    this.subscription = this.rlService.guestsChanged
+      .subscribe(
       (guests: Guest[]) => {
         this.guests = guests;
       }
-    )
+    );
   }
 
   onEditItem(index: number) {

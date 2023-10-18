@@ -6,7 +6,7 @@ export class RsvpListService {
     startedEditing = new Subject<number>();
     private guests: Guest[] = [
         new Guest('Thomas', 2, 1),
-        new Guest('Gizelle', 2, 2)
+        new Guest('Jo', 2, 2)
     ];
 
     getGuests() {
