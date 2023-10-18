@@ -8,7 +8,8 @@
 
 Where the Party At is an event management system. The idea came when I found myself juggling to RSVP, keep track of the date, location, buying presents, etc. to so many event invites for my friends and family. 
 
-Where the Party At allows users - party hosts or guests - to create events, manage event details such as date, time, location, and guests. 
+Where the Party At allows users - party hosts or guests - to create events, manage event details such as date, time, location, and guests on the Events tab.
+
 With the RSVP list, the host can keep track of the guests that have RSVP'd with details on how many extra people they are bringing. 
 
 ## Tech Stack
