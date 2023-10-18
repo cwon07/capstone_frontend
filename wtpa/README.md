@@ -16,9 +16,9 @@ With the RSVP list, the host can keep track of the guests that have RSVP'd with 
 
 Angular, Typescript, Bootstrap, Firebase for database, authentication, and hosting
 
-## Mock UP of UI
+## Snapshot of UI
 
- ![Desktop View](wtpa/src/app/shared/UI.png)
+ ![Desktop View](/wtpa/src/app/shared/UI.png)
 
 
 ## Roadmap
