@@ -18,6 +18,7 @@ import { RsvpListService } from './rsvp-list/rsvp-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { EventService } from './events/event.service';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthComponent } from './auth/auth.component';
     RsvpListComponent,
     RsvpEditComponent,
     DropdownDirective,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
