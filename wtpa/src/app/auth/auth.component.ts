@@ -35,17 +35,17 @@ export class AuthComponent {
         } else {
             authObs = this.authService.signup(email, password);
         }
-            this.authService.signup(email, password).subscribe(
-                resData => {
-                    console.log(resData);
-                    this.isLoading = false;
-            }, 
-                errorMessage => {
-                    console.log(errorMessage);
-                    this.error = errorMessage;
-                    this.isLoading = false;
-                }
-            );
+        authObs.subscribe(
+            resData => {
+                console.log(resData);
+                this.isLoading = false;
+        }, 
+            errorMessage => {
+                console.log(errorMessage);
+                this.error = errorMessage;
+                this.isLoading = false;
+            }
+        );
 
         form.reset();
     }
