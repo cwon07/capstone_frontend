@@ -4,10 +4,15 @@ import { map, tap } from 'rxjs/operators';
 
 import { Event } from '../events/event.model';
 import { EventService } from '../events/event.service';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({ providedIn: 'root'})
 export class DataStorageService {
-    constructor(private http: HttpClient, private eventService: EventService) {}
+    constructor(
+        private http: HttpClient, 
+        private eventService: EventService,
+        private authService: AuthService
+        ) {}
 
     storeEvents() {
         const events = this.eventService.getEvents();

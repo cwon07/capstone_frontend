@@ -8,12 +8,14 @@ import { EventEditComponent } from "./events/event-edit/event-edit.component";
 import { RsvpListComponent } from './rsvp-list/rsvp-list.component';
 import { EventsResolverService } from './events/events-resolver.service';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/events', pathMatch: 'full'},
     { path: 'events', 
         component: EventsComponent, 
+        canActivate: [AuthGuard],
         children: [
             { path: '', component: EventStartComponent },
             { path: 'new', component: EventEditComponent },

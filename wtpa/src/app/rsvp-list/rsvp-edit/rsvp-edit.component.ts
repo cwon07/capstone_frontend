@@ -11,8 +11,7 @@ import { RsvpListService } from '../rsvp-list.service';
   styleUrls: ['./rsvp-edit.component.css']
 })
 export class RsvpEditComponent implements OnDestroy{
-  @ViewChild('f', { static: false }) 
-  rlForm!: NgForm;
+  @ViewChild('f', { static: false }) rlForm!: NgForm;
   subscription!: Subscription;
   editMode = false;
   editedGuestIndex!: number;
