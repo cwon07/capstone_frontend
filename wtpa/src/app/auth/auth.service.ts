@@ -41,10 +41,10 @@ export class AuthService {
                         +resData.expiresIn
                     );
                 })
-            )
+            );
         }
 
-        login(email: String, password: string) {
+        login(email: string, password: string) {
             return this.http
                 .post<AuthResponseData>(
                     'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDH6P5QpvXrWDBks9DjdX--dJfJPXe1yv0',
@@ -86,10 +86,12 @@ export class AuthService {
         switch (errorRes.error.error.message) {
             case 'EMAIL_EXISTS':
                 errorMessage = 'This email already exists';
+                break;
             case 'EMAIL_NOT_FOUND':
                 errorMessage = 'This email does not exist';
+                break;
             case 'INVALID_PASSWORD':
-                errorMessage = 'This password is not correct';
+                errorMessage = 'Incorrect password';
                 break;
         }
         return throwError(() => new Error(errorMessage));
