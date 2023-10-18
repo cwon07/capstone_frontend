@@ -11,4 +11,5 @@ export class AppComponent {
  constructor(private authService: AuthService) {
   this.authService.autoLogin();
  }
+ image = '../shared/background.jpeg';
 }

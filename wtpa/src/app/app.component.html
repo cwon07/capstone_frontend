@@ -1,6 +1,5 @@
 <app-header></app-header>
-  <div class="container">
-    
+  <div id="container" [ngStyle]="{ backgroundImage: 'url(' + image + ')' }"></div>
     <div class="row">
       <div class="col-md-12">
         <router-outlet></router-outlet>

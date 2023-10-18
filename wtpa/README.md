@@ -18,7 +18,7 @@ Angular, Typescript, Bootstrap, Firebase for database, authentication, and hosti
 
 ## Mock UP of UI
 
- ![Desktop View](mockupUI.png)
+ ![Desktop View](wtpa/src/app/shared/UI.png)
 
 
 ## Roadmap
