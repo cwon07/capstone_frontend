@@ -20,7 +20,11 @@ Angular, Typescript, Bootstrap, Firebase for database, authentication, and hosti
 
  ![Desktop View](/wtpa/src/app/shared/UI.png)
 
+## Additional Features to Add
+
+In the near future I'd like to add the Google Map API to show where the event venue is going to be when user enters in the address. User can also add guests' email address and sent out an RSVP email, where guests can RSVP and the app compiles a confirmed RSVP list for the host. Lastly, make the app look nicer by adding some animation and more styling.
 
 ## Roadmap
 
-Watch Angular tutorials and familiarize with the codes
+Angular + Typescript, 
+Utilize Firebase for database, authentication, and hosting
