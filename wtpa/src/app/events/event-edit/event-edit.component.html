@@ -94,15 +94,18 @@
                 <div class="col-xs-12" formArrayName="guests">
                     <div class="row" *ngFor="let guestCtrl of eventControls; let i = index"
                     [formGroupName]="i" style="margin-top: 10px">
-                <div class="col-xs-8">
-                    <input type="text" class="form-control" formControlName="name">
+                <div class="col-xs-7">
+                    <label for="name">Guest's Name</label>
+                    <input type="text" class="form-control" formControlName="name">           
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
+                    <label for="adult"># of Adults</label>
                     <input type="number" class="form-control" formControlName="adult">
+                    <label for="children"># of Children</label>
                     <input type="number" class="form-control" formControlName="children">
                 </div>
                 <div class="col-xs-2">
-                    <button class="btn btn-danger" type="button" (click)="onDeleteGuest(i)">X</button>
+                    <button class="btn btn-danger" type="button" (click)="onDeleteGuest(i)">Delete Guest</button>
                 </div>
             </div>
             <hr>

@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Observable } from 'rxjs';
 
 import { AuthService, AuthResponseData } from "./auth.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-auth',
@@ -13,7 +14,7 @@ export class AuthComponent {
     isLoading = false;
     error: string = null;
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {}
 
     onSwitchMode() {
         this.isLoginMode = !this.isLoginMode;
@@ -35,11 +36,12 @@ export class AuthComponent {
         } else {
             authObs = this.authService.signup(email, password);
         }
-        
+
         authObs.subscribe(
             resData => {
                 console.log(resData);
                 this.isLoading = false;
+                this.router.navigate(['/events'])
             }, 
             errorMessage => {
                 console.log(errorMessage);
