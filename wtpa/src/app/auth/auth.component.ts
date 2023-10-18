@@ -35,11 +35,12 @@ export class AuthComponent {
         } else {
             authObs = this.authService.signup(email, password);
         }
+        
         authObs.subscribe(
             resData => {
                 console.log(resData);
                 this.isLoading = false;
-        }, 
+            }, 
             errorMessage => {
                 console.log(errorMessage);
                 this.error = errorMessage;
